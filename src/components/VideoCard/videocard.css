@@ -1,0 +1,47 @@
+.video-card{
+    width: 100%;
+    cursor: pointer;
+}
+
+.video-img{
+    width: 100%;
+}
+
+.video-heading{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.video-title{
+    padding-left: 10px;
+    inline-size: 300px;
+    overflow-wrap: break-word;
+}
+
+.list-dropdown{
+    z-index: 2;
+    position: absolute;
+    right: 1rem;
+    top: 1.6rem;
+    width: 50%;
+}
+
+.dropdown-icon
+{
+    position: relative;
+    top: 10px;
+    font-size: 1rem;
+
+}
+
+.list-dropdown-item:hover{
+    background-color: var(--light-bg);
+    width: 100%;
+}
+
+.video-footer{
+    display: flex;
+    padding-left: 10px;
+}
