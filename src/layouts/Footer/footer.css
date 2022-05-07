@@ -1,0 +1,27 @@
+.footer{
+    min-height: 8rem;
+	width: 100%;
+	padding: 1.5rem;
+    text-align: center;
+	/* color: var(--lynx-white-color); */
+    color: black;
+
+	font-size: 1.5rem;
+}
+
+.footer-social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-links i {
+    padding: 1rem;       
+    font-size: 1rem;
+    /* color: var(--lynx-white-color); */
+    color: black;
+}
+
+.footer .fas{
+    color: rgb(190, 54, 54);
+}
