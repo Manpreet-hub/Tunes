@@ -1,0 +1,22 @@
+.video-categories-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1%;
+}
+
+.category{
+    background-color: var(--light-bg);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.video-listing{
+    margin-top: 4rem;
+    padding: 0 4rem;
+    display: grid;
+    gap: 1%;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+}
+
