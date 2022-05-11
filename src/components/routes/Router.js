@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Login, Signup, VideoListing } from "../../pages/";
+import { Login, Signup, VideoListing, SingleVideo } from "../../pages/";
 import Mockman from "mockman-js";
 
 export const Router = () => {
@@ -10,6 +10,7 @@ export const Router = () => {
         <Route path="/" element={<VideoListing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/video/:videoId" element={<SingleVideo />} />
       </Routes>
     </>
   );
