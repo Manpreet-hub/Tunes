@@ -1,2 +1,3 @@
 import playIcon from "../assets/images/playIcon.jpg";
-export { playIcon };
+import pageNotFound from "../assets/images/pageNotFoundImg.jpg";
+export { playIcon, pageNotFound };
