@@ -1,14 +1,26 @@
 import "./header.css";
 import { Login, Signup } from "../../pages";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import RestoreOutlinedIcon from "@mui/icons-material/RestoreOutlined";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import { playIcon } from "../../assets/";
+import { useAuth } from "../../context/";
 
 export const Header = () => {
+  const { authState, authDispatch } = useAuth();
+  const { isAuthenticated } = authState;
+  console.log(isAuthenticated);
+  const navigate = useNavigate();
+
+  const logoutHandler = (e) => {
+    localStorage.removeItem("token");
+    authDispatch({ type: "RESET_AUTH" });
+    navigate("/login");
+  };
+
   return (
     <div className="navbar">
       <div className="hamburger-menu">
@@ -30,17 +42,17 @@ export const Header = () => {
             </Link>
           </li>
           <li>
-            <Link className="menu-link" to="/">
+            <Link className="menu-link" to="/history">
               <RestoreOutlinedIcon className="menu-icon" /> History
             </Link>
           </li>
           <li>
-            <Link className="menu-link" to="/">
+            <Link className="menu-link" to="/watchLater">
               <WatchLaterOutlinedIcon className="menu-icon" /> Watch Later
             </Link>
           </li>
           <li>
-            <Link className="menu-link" to="/">
+            <Link className="menu-link" to="/likedVideos">
               <ThumbUpOutlinedIcon className="menu-icon" /> Liked Videos
             </Link>
           </li>
@@ -57,9 +69,13 @@ export const Header = () => {
       <div className="navbar-section">
         <ul className="nav-icons">
           <li>
-            <Link to="/login" className="navbar-links">
-              Login
-            </Link>
+            {isAuthenticated ? (
+              <p onClick={logoutHandler}>Logout</p>
+            ) : (
+              <Link to="/login" className="navbar-links">
+                Login
+              </Link>
+            )}
           </li>
         </ul>
       </div>
