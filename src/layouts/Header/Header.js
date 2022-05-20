@@ -12,7 +12,6 @@ import { useAuth } from "../../context/";
 export const Header = () => {
   const { authState, authDispatch } = useAuth();
   const { isAuthenticated } = authState;
-  console.log(isAuthenticated);
   const navigate = useNavigate();
 
   const logoutHandler = (e) => {
