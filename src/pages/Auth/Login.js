@@ -14,7 +14,6 @@ export const Login = () => {
 
   const changeHandler = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
-    console.log(user);
   };
 
   const submitFormHandler = async (e) => {
@@ -22,7 +21,6 @@ export const Login = () => {
     if (user.email && user.password) {
       try {
         const { data } = await loginService(user);
-        console.log(data);
         const { encodedToken, foundUser } = data;
         localStorage.setItem("token", encodedToken);
         authDispatch({
@@ -49,7 +47,7 @@ export const Login = () => {
     <div className="auth-container">
       <div className="auth-form">
         <h2 className="txt-header-color txt-center">LOGIN</h2>
-        <form>
+        <form onSubmit={submitFormHandler}>
           <label className="label">Email address</label>
           <input
             required
@@ -81,7 +79,7 @@ export const Login = () => {
 
           <button
             className="btn-default  btn-primary login-signup-btn"
-            onClick={submitFormHandler}
+            type="submit"
           >
             Login
           </button>
