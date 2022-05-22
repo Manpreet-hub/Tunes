@@ -10,11 +10,20 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ReactPlayer from "react-player";
 import { useAuth, useData } from "../../context/";
-import { addToLikeVideo, removeFromLike, postHistory } from "../../services/";
+import WatchLaterIcon from "@mui/icons-material/WatchLater";
+import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
+import {
+  addToLikeVideo,
+  removeFromLike,
+  postHistory,
+  addToWatchLater,
+  removeFromWatchLater,
+} from "../../services/";
+import { isVideoInList } from "../../utils/";
 
 export const SingleVideo = () => {
   const { dataState, dataDispatch } = useData();
-  const { likes } = dataState;
+  const { likes, watchLater } = dataState;
   const navigate = useNavigate();
   let { videoId } = useParams();
 
@@ -29,12 +38,10 @@ export const SingleVideo = () => {
         console.log(err);
       }
     })();
-  }, [videoId, video]);
+  }, [videoId]);
 
-  const isVideoLiked = () => {
-    return likes.some((likedVideo) => likedVideo._id === video._id);
-  };
-
+  const isVideoLiked = isVideoInList(likes, video._id);
+  const isVideoInWatchLater = isVideoInList(watchLater, video._id);
   const {
     authState: { isAuthenticated },
   } = useAuth();
@@ -58,7 +65,7 @@ export const SingleVideo = () => {
             </p>
           </div>
           <div className="icons">
-            {!isVideoLiked() ? (
+            {!isVideoLiked ? (
               <span>
                 <ThumbUpOutlinedIcon
                   className="icon"
@@ -75,13 +82,23 @@ export const SingleVideo = () => {
                 LIKED
               </span>
             )}
-            <span>
-              <ShareOutlinedIcon className="icon" />
-              SHARE
-            </span>
+
             <span>
               <PlaylistAddIcon className="icon" /> SAVE
             </span>
+            {!isVideoInWatchLater ? (
+              <span onClick={() => addToWatchLater(dataDispatch, video)}>
+                <WatchLaterOutlinedIcon className="icon" />
+                WATCH LATER
+              </span>
+            ) : (
+              <span
+                onClick={() => removeFromWatchLater(dataDispatch, video._id)}
+              >
+                <WatchLaterIcon className="icon" />
+                WATCH LATER
+              </span>
+            )}
           </div>
         </div>
       </div>
