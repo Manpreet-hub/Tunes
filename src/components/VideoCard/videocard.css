@@ -21,19 +21,25 @@
 }
 
 .list-dropdown{
-    z-index: 2;
+    z-index: 5;
     position: absolute;
     right: 1rem;
     top: 1.6rem;
     width: 50%;
+    background-color: white;
 }
 
 .dropdown-icon
 {
     position: relative;
-    top: 10px;
-    font-size: 1rem;
+    top: 8px;
+    font-size: .6rem;
+    margin-right: 4px;
+}
 
+.list-dropdown-item{
+    padding: 2px;
+    margin: 4px 0;
 }
 
 .list-dropdown-item:hover{
