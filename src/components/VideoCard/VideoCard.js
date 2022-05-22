@@ -4,10 +4,20 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import { Link } from "react-router-dom";
+import { addToWatchLater, removeFromWatchLater } from "../../services";
+import { useData } from "../../context";
+import { isVideoInList } from "../../utils";
 
 export const VideoCard = ({ videoInfo }) => {
   const [dropdown, setDropDown] = useState(false);
   const { _id, title, views, thumbnail, uploaded } = videoInfo;
+  const {
+    dataState: { watchLater },
+    dataDispatch,
+  } = useData();
+
+  const isVideoInWatchLater = isVideoInList(watchLater, videoInfo._id);
+
   return (
     <div className="video-card">
       <Link to={`/video/${_id}`}>
@@ -18,9 +28,26 @@ export const VideoCard = ({ videoInfo }) => {
         <MoreVertIcon onClick={() => setDropDown(!dropdown)} />
         {dropdown && (
           <ul className="list-dropdown">
-            <li className="list-dropdown-item">
-              <WatchLaterIcon className="dropdown-icon" /> Add to watch later
-            </li>
+            {isVideoInWatchLater ? (
+              <li
+                className="list-dropdown-item"
+                onClick={() =>
+                  removeFromWatchLater(dataDispatch, videoInfo._id)
+                }
+              >
+                <WatchLaterIcon className="dropdown-icon" />
+                Remove From watch later
+              </li>
+            ) : (
+              <li
+                className="list-dropdown-item"
+                onClick={() => addToWatchLater(dataDispatch, videoInfo)}
+              >
+                <WatchLaterIcon className="dropdown-icon" />
+                Add to watch later
+              </li>
+            )}
+
             <li className="list-dropdown-item">
               <PlaylistAddIcon className="dropdown-icon" />
               Add to playlist
