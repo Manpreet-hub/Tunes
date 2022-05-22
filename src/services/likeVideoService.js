@@ -25,7 +25,6 @@ export const addToLikeVideo = async (dataDispatch, video) => {
 };
 
 export const removeFromLike = async (dataDispatch, videoId) => {
-  console.log(videoId);
   const token = localStorage.getItem("token");
 
   if (token) {

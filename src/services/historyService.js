@@ -21,7 +21,6 @@ const postHistory = async (dataDispatch, video) => {
   const token = localStorage.getItem("token");
 
   try {
-    console.log("post history");
     const {
       data: { history },
     } = await axios.post(
