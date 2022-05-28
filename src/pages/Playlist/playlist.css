@@ -1,0 +1,13 @@
+.playlists-container{
+    display: flex;
+    padding: 4rem 4rem;
+    cursor: pointer;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.playlist-cancel-icon{
+    position: absolute;
+    top: 6%;
+    left: 10rem;
+}

@@ -4,8 +4,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { videos } from "../../backend/db/videos";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
-import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
-import { VideoCard } from "../../components/";
+import { VideoCard, PlaylistModal } from "../../components/";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ReactPlayer from "react-player";
@@ -26,6 +25,7 @@ export const SingleVideo = () => {
   const { likes, watchLater } = dataState;
   const navigate = useNavigate();
   let { videoId } = useParams();
+  const [showModal, setShowModal] = useState(false);
 
   const [video, setVideo] = useState("");
 
@@ -83,7 +83,7 @@ export const SingleVideo = () => {
               </span>
             )}
 
-            <span>
+            <span onClick={() => setShowModal(!showModal)}>
               <PlaylistAddIcon className="icon" /> SAVE
             </span>
             {!isVideoInWatchLater ? (
@@ -107,6 +107,14 @@ export const SingleVideo = () => {
           <VideoCard key={video._id} videoInfo={video} />
         ))}
       </div>
+
+      {showModal && (
+        <PlaylistModal
+          video={video}
+          showModal={showModal}
+          setShowModal={setShowModal}
+        />
+      )}
     </div>
   );
 };

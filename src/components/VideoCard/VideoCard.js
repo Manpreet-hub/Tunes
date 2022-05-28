@@ -7,15 +7,16 @@ import { Link } from "react-router-dom";
 import { addToWatchLater, removeFromWatchLater } from "../../services";
 import { useData } from "../../context";
 import { isVideoInList } from "../../utils";
+import { PlaylistModal } from "../../components/";
 
 export const VideoCard = ({ videoInfo }) => {
   const [dropdown, setDropDown] = useState(false);
   const { _id, title, views, thumbnail, uploaded } = videoInfo;
+  const [showModal, setShowModal] = useState(false);
   const {
     dataState: { watchLater },
     dataDispatch,
   } = useData();
-
   const isVideoInWatchLater = isVideoInList(watchLater, videoInfo._id);
 
   return (
@@ -48,7 +49,10 @@ export const VideoCard = ({ videoInfo }) => {
               </li>
             )}
 
-            <li className="list-dropdown-item">
+            <li
+              className="list-dropdown-item"
+              onClick={() => setShowModal(!showModal)}
+            >
               <PlaylistAddIcon className="dropdown-icon" />
               Add to playlist
             </li>
@@ -59,6 +63,13 @@ export const VideoCard = ({ videoInfo }) => {
         <div className="video-views p para-md">{views} ·</div>
         <span className="p para-md">{uploaded}</span>
       </div>
+      {showModal && (
+        <PlaylistModal
+          video={videoInfo}
+          showModal={showModal}
+          setShowModal={setShowModal}
+        />
+      )}
     </div>
   );
 };

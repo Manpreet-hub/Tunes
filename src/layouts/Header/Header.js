@@ -6,6 +6,7 @@ import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import RestoreOutlinedIcon from "@mui/icons-material/RestoreOutlined";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
+import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import { playIcon } from "../../assets/";
 import { useAuth } from "../../context/";
 
@@ -53,6 +54,11 @@ export const Header = () => {
           <li>
             <Link className="menu-link" to="/likedVideos">
               <ThumbUpOutlinedIcon className="menu-icon" /> Liked Videos
+            </Link>
+          </li>
+          <li>
+            <Link className="menu-link" to="/playlist">
+              <PlaylistAddIcon className="menu-icon" /> Playlist
             </Link>
           </li>
         </ul>
