@@ -7,3 +7,9 @@ export {
   clearAllHistory,
 } from "./historyService";
 export { addToWatchLater, removeFromWatchLater } from "./watchLaterService";
+export {
+  addToPlayList,
+  deletePlayList,
+  addVideoToPlayList,
+  removeVideoFromPlayList,
+} from "./playListService";
