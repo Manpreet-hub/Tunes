@@ -1,33 +1,43 @@
-import React, { useState, useEffect } from "react";
 import { VideoCard } from "../../components/";
 import "./videolisting.css";
-import axios from "axios";
+import { useData } from "../../context";
+import { sortByCategory } from "../../utils/";
 
 export const VideoListing = () => {
-  const [videoInfo, setVideoInfo] = useState([]);
-  const categories = ["All", "Classical", "Folk", "hip-hop", "Cover", "Live"];
+  const {
+    dataState: { category, categoriesData, videos },
+    dataDispatch,
+  } = useData();
 
-  useEffect(() => {
-    try {
-      (async () => {
-        const res = await axios.get("/api/videos");
-        setVideoInfo(res.data.videos);
-      })();
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
+  const sortedVideos = sortByCategory([...videos], category);
 
   return (
     <>
       <div className="video-categories-container">
-        {categories.map((category) => (
-          <span className="category">{category}</span>
+        <span
+          className="category"
+          onClick={() => dataDispatch({ type: "SET_CATEGORY", payload: "All" })}
+        >
+          All
+        </span>
+
+        {categoriesData.map((catItem) => (
+          <span
+            className="category"
+            onClick={() =>
+              dataDispatch({
+                type: "SET_CATEGORY",
+                payload: catItem.categoryName,
+              })
+            }
+          >
+            {catItem.categoryName}
+          </span>
         ))}
       </div>
 
       <div className="video-listing">
-        {videoInfo.map((videoInfo) => (
+        {sortedVideos.map((videoInfo) => (
           <VideoCard videoInfo={videoInfo} />
         ))}
       </div>
