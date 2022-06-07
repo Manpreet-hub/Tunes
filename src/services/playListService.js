@@ -1,23 +1,37 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const addToPlayList = async (dataDispatch, playlist) => {
   const token = localStorage.getItem("token");
-  try {
-    const {
-      data: { playlists },
-    } = await axios.post(
-      `/api/user/playlists`,
-      { playlist },
-      {
-        headers: {
-          authorization: token,
-        },
-      }
-    );
-    dataDispatch({ type: "ADD_PLAYLIST", payload: playlists });
-  } catch (error) {
-    console.log(error);
-  }
+  if (token) {
+    try {
+      const {
+        data: { playlists },
+      } = await axios.post(
+        `/api/user/playlists`,
+        { playlist },
+        {
+          headers: {
+            authorization: token,
+          },
+        }
+      );
+      dataDispatch({ type: "ADD_PLAYLIST", payload: playlists });
+      toast.success("Playlist Created", {
+        position: "top-right",
+        autoClose: 2000,
+      });
+    } catch (error) {
+      toast.error("Something went wrong", {
+        position: "top-right",
+        autoClose: 2000,
+      });
+    }
+  } else
+    toast.error("Please login first!!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
 };
 
 const deletePlayList = async (dataDispatch, playlistId) => {
@@ -29,8 +43,15 @@ const deletePlayList = async (dataDispatch, playlistId) => {
       },
     });
     dataDispatch({ type: "DELETE_PLAYLIST", payload: data.playlists });
+    toast.success("Playlist Deleted", {
+      position: "top-right",
+      autoClose: 2000,
+    });
   } catch (error) {
-    console.log(error);
+    toast.error("Something went wrong", {
+      position: "top-right",
+      autoClose: 2000,
+    });
   }
 };
 
@@ -48,10 +69,16 @@ const addVideoToPlayList = async (dataDispatch, video, playlistId) => {
         },
       }
     );
-    alert("added video");
+    toast.success("Video Added to Playlist", {
+      position: "top-right",
+      autoClose: 2000,
+    });
     dataDispatch({ type: "ADD_VIDEO_TO_PLAYLIST", payload: data.playlist });
   } catch (error) {
-    console.log(error);
+    toast.error("Something went wrong", {
+      position: "top-right",
+      autoClose: 2000,
+    });
   }
 };
 
@@ -63,14 +90,19 @@ const removeVideoFromPlayList = async (dataDispatch, videoId, playlistId) => {
       `/api/user/playlists/${playlistId}/${videoId}`,
       { headers: { authorization: token } }
     );
-    alert("removed video");
     dataDispatch({
       type: "REMOVE_VIDEO_FROM_PLAYLIST",
       payload: response.data.playlist,
     });
-    console.log(response);
+    toast.success("Removed Video from Playlist", {
+      position: "top-right",
+      autoClose: 2000,
+    });
   } catch (error) {
-    console.log(error);
+    toast.error("Something went wrong", {
+      position: "top-right",
+      autoClose: 2000,
+    });
   }
 };
 

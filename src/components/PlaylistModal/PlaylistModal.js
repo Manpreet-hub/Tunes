@@ -9,6 +9,7 @@ import {
 } from "../../services";
 import { useData } from "../../context";
 import { isVideoInList } from "../../utils/";
+import { toast } from "react-toastify";
 
 export const PlaylistModal = ({ video, showModal, setShowModal }) => {
   const [playlistInput, setPlaylistInput] = useState({ title: "" });
@@ -19,7 +20,10 @@ export const PlaylistModal = ({ video, showModal, setShowModal }) => {
 
   const addPlayLists = () => {
     if (playlistInput.title === "") {
-      alert("Playlist name shouldn't be empty");
+      toast.error("Playlist name shouldn't be empty", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     } else {
       setPlaylistInput({ title: "" });
       addToPlayList(dataDispatch, playlistInput);

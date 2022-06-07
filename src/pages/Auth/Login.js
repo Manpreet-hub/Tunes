@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../context/";
 import axios from "axios";
 import { loginService } from "../../services/";
+import { toast } from "react-toastify";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -29,8 +30,16 @@ export const Login = () => {
           authToken: true,
         });
         navigate("/");
+        toast.success("Logged In Successfully", {
+          position: "top-right",
+          autoClose: 2000,
+        });
       } catch (error) {
         console.log(error);
+        toast.error("Something went wrong!", {
+          position: "top-right",
+          autoClose: 2000,
+        });
       }
     }
   };
@@ -38,8 +47,8 @@ export const Login = () => {
   const loginAsGuest = (e) => {
     e.preventDefault();
     setUser({
-      email: "adarshbalika@gmail.com",
-      password: "adarshBalika123",
+      email: "test@gmail.com",
+      password: "Test@123456",
     });
   };
 
@@ -66,7 +75,7 @@ export const Login = () => {
             type="password"
             name="password"
             value={user.password}
-            placeholder="test123"
+            placeholder="Test@123456"
             onChange={changeHandler}
           />
 

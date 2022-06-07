@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const addToLikeVideo = async (dataDispatch, video) => {
   const token = localStorage.getItem("token");
@@ -18,10 +19,21 @@ export const addToLikeVideo = async (dataDispatch, video) => {
         }
       );
       dataDispatch({ type: "ADD_TO_LIKE", payload: likes });
+      toast.success("Added to liked video", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     }
-  } else alert("Please login first");
+  } else
+    toast.error("Please login first!!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
 };
 
 export const removeFromLike = async (dataDispatch, videoId) => {
@@ -42,8 +54,19 @@ export const removeFromLike = async (dataDispatch, videoId) => {
         type: "REMOVE_FROM_LIKE",
         payload: likes,
       });
+      toast.success("Removed from liked video", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     }
-  } else alert("Please login first");
+  } else
+    toast.error("Please login first!!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
 };
