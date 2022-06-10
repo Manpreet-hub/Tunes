@@ -13,3 +13,4 @@ export {
   addVideoToPlayList,
   removeVideoFromPlayList,
 } from "./playListService";
+export { getCategories, getVideos } from "./dataService.js";

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const addToWatchLater = async (dataDispatch, video) => {
   const token = localStorage.getItem("token");
@@ -16,10 +17,18 @@ export const addToWatchLater = async (dataDispatch, video) => {
         }
       );
       dataDispatch({ type: "SET_WATCHLATER", payload: watchlater });
+      toast.success("Added to watch later", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     } catch (error) {
       console.log(error);
     }
-  } else alert("Please login first!");
+  } else
+    toast.error("Please login first!!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
 };
 
 export const removeFromWatchLater = async (dataDispatch, videoId) => {
@@ -34,8 +43,16 @@ export const removeFromWatchLater = async (dataDispatch, videoId) => {
         },
       });
       dataDispatch({ type: "SET_WATCHLATER", payload: watchlater });
+      toast.success("Removed from watch later", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     } catch (error) {
       console.log(error);
     }
-  } else alert("Please login first !!");
+  } else
+    toast.error("Please login first!!", {
+      position: "top-right",
+      autoClose: 2000,
+    });
 };

@@ -14,6 +14,8 @@ import Mockman from "mockman-js";
 import { Outlet, Navigate } from "react-router-dom";
 import { PlaylistCard } from "../../components/";
 import { useAuth } from "../../context/";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const ProtectedRoutes = ({ children }) => {
   const { authState } = useAuth();
@@ -30,14 +32,49 @@ export const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/video/:videoId" element={<SingleVideo />} />
-        <Route path="/watchLater" element={<WatchLater />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/likedVideos" element={<LikedVideos />} />
-        <Route path="/playlist/:playlistId" element={<PlaylistCard />} />
-        <Route path="/playlist" element={<Playlist />} />
+        <Route
+          path="/watchLater"
+          element={
+            <ProtectedRoutes>
+              <WatchLater />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/history"
+          element={
+            <ProtectedRoutes>
+              <History />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/likedVideos"
+          element={
+            <ProtectedRoutes>
+              <LikedVideos />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/playlist/:playlistId"
+          element={
+            <ProtectedRoutes>
+              <PlaylistCard />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/playlist"
+          element={
+            <ProtectedRoutes>
+              <Playlist />
+            </ProtectedRoutes>
+          }
+        />
         <Route path="*" element={<PageNotFound />} />
-        <Route path="/" element={<ProtectedRoutes />} />
       </Routes>
+      <ToastContainer />
     </>
   );
 };

@@ -2,9 +2,11 @@ export const initialDataState = {
   likes: [],
   watchLater: [],
   history: [],
-  category: [],
+  category: "All",
+  categoriesData: [],
   error: null,
   playLists: [],
+  videos: [],
 };
 
 export const dataReducer = (state, action) => {
@@ -41,5 +43,11 @@ export const dataReducer = (state, action) => {
           playlist._id === action.payload._id ? action.payload : playlist
         ),
       };
+    case "SET_CATEGORY":
+      return { ...state, category: action.payload };
+    case "GET_CATEGORY":
+      return { ...state, categoriesData: action.payload };
+    case "GET_VIDEOS":
+      return { ...state, videos: action.payload };
   }
 };

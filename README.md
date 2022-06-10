@@ -73,9 +73,3 @@ Tunes is a music video library built using  HTML, CSS, React JS and Mockbee (Moc
 
 ![Screenshot (155)](https://user-images.githubusercontent.com/73722262/172466205-b58cc9d2-0a03-4b75-8b58-1feec17f01f3.png)
 
-
-
-
-
- 
-

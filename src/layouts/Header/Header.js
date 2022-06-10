@@ -9,6 +9,7 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import { playIcon } from "../../assets/";
 import { useAuth } from "../../context/";
+import { toast } from "react-toastify";
 
 export const Header = () => {
   const { authState, authDispatch } = useAuth();
@@ -19,6 +20,10 @@ export const Header = () => {
     localStorage.removeItem("token");
     authDispatch({ type: "RESET_AUTH" });
     navigate("/login");
+    toast.success("Logged Out Successfully", {
+      position: "top-right",
+      autoClose: 2000,
+    });
   };
 
   return (
@@ -36,11 +41,7 @@ export const Header = () => {
               <HomeOutlinedIcon className="menu-icon" /> Home
             </Link>
           </li>
-          <li>
-            <Link className="menu-link" to="/">
-              <ExploreOutlinedIcon className="menu-icon" /> Explore
-            </Link>
-          </li>
+
           <li>
             <Link className="menu-link" to="/history">
               <RestoreOutlinedIcon className="menu-icon" /> History
