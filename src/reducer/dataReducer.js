@@ -7,6 +7,7 @@ export const initialDataState = {
   error: null,
   playLists: [],
   videos: [],
+  search:""
 };
 
 export const dataReducer = (state, action) => {
@@ -36,6 +37,8 @@ export const dataReducer = (state, action) => {
             : { ...curEle }
         ),
       };
+      case "SEARCH_QUERY":
+        return {...state,search:action.payload}
     case "REMOVE_VIDEO_FROM_PLAYLIST":
       return {
         ...state,

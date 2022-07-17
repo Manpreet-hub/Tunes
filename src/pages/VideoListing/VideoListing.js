@@ -1,35 +1,45 @@
 import { VideoCard } from "../../components/";
 import "./videolisting.css";
 import { useData } from "../../context";
-import { sortByCategory } from "../../utils/";
+import { useState } from "react";
+import { sortByCategory, getSearchResult } from "../../utils/";
 
 export const VideoListing = () => {
   const {
-    dataState: { category, categoriesData, videos },
+    dataState: { category, categoriesData, videos, search },
     dataDispatch,
   } = useData();
+  const [showAllVideo, setShowAllVideo] = useState(false);
 
-  const sortedVideos = sortByCategory([...videos], category);
-
+  const sortedVideosByCategory = sortByCategory([...videos], category);
+  const finalFiltered = getSearchResult(sortedVideosByCategory, search);
   return (
     <>
       <div className="video-categories-container">
         <span
-          className="category"
-          onClick={() => dataDispatch({ type: "SET_CATEGORY", payload: "All" })}
+          className={showAllVideo ? "category category-active" : "category"}
+          onClick={() => {
+            setShowAllVideo(!showAllVideo);
+            dataDispatch({ type: "SET_CATEGORY", payload: "All" });
+          }}
         >
           All
         </span>
 
         {categoriesData.map((catItem) => (
           <span
-            className="category"
-            onClick={() =>
+            className={
+              category === catItem.categoryName
+                ? "category category-active"
+                : "category"
+            }
+            onClick={() => {
+              setShowAllVideo(false);
               dataDispatch({
                 type: "SET_CATEGORY",
                 payload: catItem.categoryName,
-              })
-            }
+              });
+            }}
           >
             {catItem.categoryName}
           </span>
@@ -37,7 +47,7 @@ export const VideoListing = () => {
       </div>
 
       <div className="video-listing">
-        {sortedVideos.map((videoInfo) => (
+        {finalFiltered.map((videoInfo) => (
           <VideoCard videoInfo={videoInfo} />
         ))}
       </div>

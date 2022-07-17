@@ -11,6 +11,7 @@
 .video-iframe iframe{
     width:100%;
     aspect-ratio: 12/6;
+    padding: 0.4rem;
 }
 .vid-title{
     padding: 1rem 0;

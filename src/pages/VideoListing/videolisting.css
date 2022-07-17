@@ -12,6 +12,11 @@
     cursor: pointer;
 }
 
+.category-active {
+    background-color: black;
+    color: #ffff;
+  }
+
 .video-listing{
     margin-top: 4rem;
     padding: 0 4rem;
