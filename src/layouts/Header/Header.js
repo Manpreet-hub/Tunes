@@ -8,11 +8,15 @@ import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import { playIcon } from "../../assets/";
-import { useAuth } from "../../context/";
+import { useAuth, useData } from "../../context/";
 import { toast } from "react-toastify";
 
 export const Header = () => {
   const { authState, authDispatch } = useAuth();
+  const {
+    dataState: { search },
+    dataDispatch,
+  } = useData();
   const { isAuthenticated } = authState;
   const navigate = useNavigate();
 
@@ -70,7 +74,15 @@ export const Header = () => {
       </div>
       <div className="search-box">
         <i className="search-icon fas fa-search" aria-hidden="true"></i>
-        <input className="search-bar" type="text" placeholder="Search" />
+        <input
+          className="search-bar"
+          type="text"
+          placeholder="Search"
+          value={search}
+          onChange={(e) =>
+            dataDispatch({ type: "SEARCH_QUERY", payload: e.target.value })
+          }
+        />
       </div>
       <div className="navbar-section">
         <ul className="nav-icons">
