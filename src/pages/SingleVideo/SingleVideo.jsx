@@ -1,7 +1,6 @@
 import "./singlevideo.css";
 import { Header } from "../../layouts/";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { videos } from "../../backend/db/videos";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import { VideoCard, PlaylistModal } from "../../components/";
@@ -22,7 +21,7 @@ import { isVideoInList } from "../../utils/";
 
 export const SingleVideo = () => {
   const { dataState, dataDispatch } = useData();
-  const { likes, watchLater } = dataState;
+  const { likes, watchLater, videos } = dataState;
   const navigate = useNavigate();
   let { videoId } = useParams();
   const [showModal, setShowModal] = useState(false);
