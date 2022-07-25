@@ -79,13 +79,6 @@ export const Login = () => {
             onChange={changeHandler}
           />
 
-          <div className="user-info flex-row space-between">
-            <div>
-              <input type="checkbox" /> Remember me
-            </div>
-            <Link to="/">Forgot password?</Link>
-          </div>
-
           <button
             className="btn-default  btn-primary login-signup-btn"
             type="submit"
