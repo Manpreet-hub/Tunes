@@ -34,8 +34,7 @@ justify-content: space-between;
 
 .playlist-add-icon{
     position: relative;
-    top: 14px;
-    right: 2px;
+    top: 0px;
+    right: 4px;
     cursor: pointer;
 }
-
