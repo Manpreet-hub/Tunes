@@ -1,6 +1,13 @@
+.playlist-title-page{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
 .playlists-container{
     display: flex;
-    padding: 4rem 4rem;
+    justify-content: center;
+    margin-top: 1.2rem;
     cursor: pointer;
     gap: 2rem;
     flex-wrap: wrap;

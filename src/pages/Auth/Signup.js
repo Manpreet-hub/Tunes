@@ -81,7 +81,7 @@ export const Signup = () => {
           />
 
           <div>
-            <input type="checkbox" /> I accept all terms and conditions
+            <input type="checkbox" required /> I accept all terms and conditions
           </div>
           <button
             className="btn-default  btn-primary login-signup-btn"

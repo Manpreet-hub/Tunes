@@ -27,6 +27,19 @@ export const videos = [
     category: "Classical",
     uploaded: "Mar 05, 2019",
   },
+
+  {
+    _id: "7dO_MS9tZ5E",
+    title:
+      "Dekha Ek Khwab Song | Silsila | Amitabh Bachchan, Rekha |    Lata Mangeshkar",
+    description:
+      "Let your heart sway to its own beautiful music. Express the feeling of love with the melodious track ‘Dekha Ek Khwab’ from ‘Silsila’.",
+    views: "877k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/7dO_MS9tZ5E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCYir8ei-49OFL-HcCGEiBal0m-OQ",
+    category: "Classical",
+    uploaded: "Dec 22, 2015",
+  },
   {
     _id: "xfA6ySYiuE4",
     title: "Kabira Naina | Mohd Irfan | Neha Kakka ",
@@ -62,6 +75,50 @@ export const videos = [
     uploaded: "Apr 16, 2018",
   },
   {
+    _id: "k4yXQkG2s1E",
+    title: "Kala Chashma | Baar Baar Dekho | Sidharth M Katrina K ",
+    description:
+      "Kala Chashma | Baar Baar Dekho | Sidharth M Katrina K | Prem, Hardeep, Badshah, Kam, Neha, Indeep ",
+    views: "903k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/k4yXQkG2s1E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDNFvtN8z6t29WoahT0mPUeFikp5g",
+    category: "Hip-hop",
+    uploaded: "Jul 27, 2016",
+  },
+  {
+    _id: "uaCYeQ9FtSI",
+    title: "Official: Issey Kehte Hain Hip Hop Full Video Song",
+    description:
+      "Official: Issey Kehte Hain Hip Hop Full Video Song | Yo Yo Honey Singh | World Music Day ",
+    views: "303k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/uaCYeQ9FtSI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAlzEgNQxJ1miIWg-WSgRcqjBmyeQ",
+    category: "Hip-hop",
+    uploaded: "Jun 21, 2014",
+  },
+  {
+    _id: "cXUndHRKmXQ",
+    title: "PEED: Diljit Dosanjh (Official) Music Video | G.O.A.T.",
+    description:
+      "Peed official music video performed by DILJIT DOSANJH from his album G.O.A.T.  ",
+    views: "577k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/cXUndHRKmXQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAurBpH9jHVZQk4pqkpLh26W83l0A",
+    category: "Classical",
+    uploaded: "April 06, 2020",
+  },
+  {
+    _id: "Jyst8oIHOAY",
+    title: "Mercy - Badshah Feat. Lauren Gottlieb ",
+    description:
+      "BADSHAH, the #1 Hit Machine is back with a bang with a sensational new song  - ‘MERCY’ from his forthcoming album O.N.E. ",
+    views: "203k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/Jyst8oIHOAY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBiY3unDapyJfnr6A9Csc5lFhpu4w",
+    category: "Hip-hop",
+    uploaded: "Apr 1, 2017",
+  },
+  {
     _id: "FsC9gGQ37-4",
     title: "ELECTRO FOLK: BHUMBRO | Shirley Setia, Parry G & Aditya Dev ",
     description:
@@ -83,6 +140,27 @@ export const videos = [
     category: "Folk",
     uploaded: "Jun 11, 2020",
   },
+  {
+    _id: "OF9WA366Hbo",
+    title: "इन Folk Artists की Singing ने किया Stage को रोशन",
+    description:
+      "इन Folk Artists की Singing ने किया Stage को रोशन | India's Got Talent Season 3 | Singing Act",
+    views: "399k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/OF9WA366Hbo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDb46nY6Vijr90pU1KiXGUzA8lGog",
+    category: "Folk",
+    uploaded: "May 23, 2022",
+  },
+  {
+    _id: "26mNf0vKClg",
+    title: "Saari Raat Tera Takni aa Raah",
+    description: "Saari Raat Tera Takni aa Raah - Maithili Thakur",
+    views: "329k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/26mNf0vKClg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCayraJu2ZbCKXOUR7nDebayORnmQ",
+    category: "Folk",
+    uploaded: "Jul 9, 2021",
+  },
 
   {
     _id: "DZC7zzgtPwM",
@@ -97,6 +175,17 @@ export const videos = [
     uploaded: "Jan 6, 2021",
   },
   {
+    _id: "o8XRrqQOjI0",
+    title: "Chori Chori Dil Tera Churayenge: Recreate Cover ",
+    description:
+      "Presenting the most romantic melody of 90s 'Chori Chori Dil Tera' in Recreate Version. Hope you guys love this.",
+    views: "403k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/o8XRrqQOjI0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCd9MC7vMX6IHNa0Wu4hLH1e_A8_g",
+    category: "Cover",
+    uploaded: "Apr 30, 2022",
+  },
+  {
     _id: "JuduiEAkwZc",
     title: "Tere bina | Cover by Noor Chahal & Kushagra Thakur",
     description: "Collaborated with the extremely talented Kushagra Thakur ",
@@ -105,6 +194,16 @@ export const videos = [
       "https://i.ytimg.com/vi/JuduiEAkwZc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBzKa4hzMgz0GqC5dxZ5qVzO_4rQw",
     category: "Cover",
     uploaded: "Feb 9, 2021",
+  },
+  {
+    _id: "-NuZduxoqnE",
+    title: "Zara Zara | Rehna hai tere dil mein | Cover by Noor Chahal",
+    description: "Zara Zara | Rehna hai tere dil mein | Cover by Noor Chahal",
+    views: "500k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/-NuZduxoqnE/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBzgOAAtAFigIMCAAQARhJIFMoZTAP&rs=AOn4CLBCDUU2nek8x2Q49ejkq8V32qNL3Q",
+    category: "Cover",
+    uploaded: "Sep 8, 2020",
   },
   {
     _id: "h8L2JfZuIxE",
@@ -139,5 +238,38 @@ export const videos = [
       "https://i.ytimg.com/vi/8rjPMMatzFI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAKPsNhzAeixYysPK1TLKONrJDFeA",
     category: "Live",
     uploaded: "Nov 21, 2019",
+  },
+  {
+    _id: "PF6Bf-3qigk",
+    title:
+      "Udit जी और Alka जी ने Groove किया Stage पर | Indian Idol | Jodi Kamaal",
+    description:
+      "Udit जी और Alka जी ने Groove किया Stage पर | Indian Idol | Jodi Kamaal",
+    views: "443k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/PF6Bf-3qigk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAO2S8JoFYfwIjm4lrJn8sDQPOjOQ",
+    category: "Live",
+    uploaded: "Aug 22, 2021",
+  },
+  {
+    _id: "x5qZeLdkF4w",
+    title: "Churaake Dil Mera by Kumar Sanu and Anuradha Gosh",
+    description:
+      "Churaake Dil Mera by Kumar Sanu and Anuradha Gosh at 55th Bengaluru Ganesh Utsava",
+    views: "550k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/x5qZeLdkF4w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBmtikp-QTCZCUwdXxE48ya9IMlWw",
+    category: "Live",
+    uploaded: "Feb 22, 2018",
+  },
+  {
+    _id: "mj0MJ1cjU9Y",
+    title: "Diljit Dosanjh @ YouTube FanFest Mumbai 2018 | Live",
+    description: "Diljit Dosanjh @ YouTube FanFest Mumbai 2018",
+    views: "563k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/mj0MJ1cjU9Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDSg2Y5rFOuyLD7K40j8ytRb0TBrQ",
+    category: "Live",
+    uploaded: "Mar 23, 2018",
   },
 ];

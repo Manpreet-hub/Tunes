@@ -73,7 +73,6 @@ export const Header = () => {
         <Link to="/">Tunes</Link>
       </div>
       <div className="search-box">
-        <i className="search-icon fas fa-search" aria-hidden="true"></i>
         <input
           className="search-bar"
           type="text"
@@ -83,15 +82,20 @@ export const Header = () => {
             dataDispatch({ type: "SEARCH_QUERY", payload: e.target.value })
           }
         />
+        <div className="search-icon">
+          <i className=" fas fa-search" aria-hidden="true"></i>
+        </div>
       </div>
       <div className="navbar-section">
         <ul className="nav-icons">
           <li>
             {isAuthenticated ? (
-              <p onClick={logoutHandler}>Logout</p>
+              <h4 className="navbar-links" onClick={logoutHandler}>
+                Logout
+              </h4>
             ) : (
-              <Link to="/login" className="navbar-links">
-                Login
+              <Link to="/login">
+                <h4 className="navbar-links"> Login</h4>
               </Link>
             )}
           </li>

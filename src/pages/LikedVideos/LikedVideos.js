@@ -10,7 +10,7 @@ export const LikedVideos = () => {
       {dataState.likes.length === 0 ? (
         <div className="page-container">
           <h3>
-            Like Page is empty. Please watch and like videos to see them here!
+            There are no liked videos.Watch and like videos to see them here!
           </h3>
           <button class="btn-default btn-primary">
             <Link to="/">Watch Now</Link>
