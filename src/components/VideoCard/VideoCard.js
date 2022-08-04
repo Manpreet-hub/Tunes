@@ -5,9 +5,10 @@ import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import { Link } from "react-router-dom";
 import { addToWatchLater, removeFromWatchLater } from "../../services";
-import { useData } from "../../context";
+import { useData, useAuth } from "../../context";
 import { isVideoInList } from "../../utils";
 import { PlaylistModal } from "../../components/";
+import { toast } from "react-toastify";
 
 export const VideoCard = ({ videoInfo }) => {
   const [dropdown, setDropDown] = useState(false);
@@ -17,7 +18,20 @@ export const VideoCard = ({ videoInfo }) => {
     dataState: { watchLater },
     dataDispatch,
   } = useData();
+  const {
+    authState: { isAuthenticated },
+  } = useAuth();
   const isVideoInWatchLater = isVideoInList(watchLater, videoInfo._id);
+
+  const playlistHandler = () => {
+    if (isAuthenticated) setShowModal(!showModal);
+    else {
+      toast.error("Please login first!!", {
+        position: "top-right",
+        autoClose: 2000,
+      });
+    }
+  };
 
   return (
     <div className="video-card">
@@ -49,10 +63,7 @@ export const VideoCard = ({ videoInfo }) => {
               </li>
             )}
 
-            <li
-              className="list-dropdown-item"
-              onClick={() => setShowModal(!showModal)}
-            >
+            <li className="list-dropdown-item" onClick={playlistHandler}>
               <PlaylistAddIcon className="dropdown-icon" />
               Add to playlist
             </li>

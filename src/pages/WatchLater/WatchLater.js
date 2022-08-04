@@ -13,7 +13,7 @@ export const WatchLater = () => {
     <>
       {watchLater.length === 0 ? (
         <div className="page-container">
-          <h3>Watch Later Page is empty !!</h3>
+          <h3> There are no saved videos. Watch videos to see them here!</h3>
           <button class="btn-default btn-primary">
             <Link to="/">Watch Now</Link>
           </button>

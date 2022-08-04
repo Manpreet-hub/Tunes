@@ -21,8 +21,8 @@ export const HorizontalVideoCard = ({ video, onClick }) => {
       </Link>
       <div className="video-heading horizontal-container">
         <div className="video-title">{title}</div>
-        <div className="icon-section">
-          <CancelIcon className="delete-icon" onClick={onClick} />
+        <div className="icon-section cross-icon ">
+          <CancelIcon className="delete-icon " onClick={onClick} />
         </div>
         <div className="horizontal-video-footer">
           <div className=" p para-md">{views} ·</div>

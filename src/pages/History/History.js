@@ -15,7 +15,9 @@ export const History = () => {
     <>
       {dataState.history.length === 0 ? (
         <div className="page-container">
-          <h3>History Page is empty. Please watch videos to see them here!</h3>
+          <h3>
+            There are no videos in your history. Watch videos to see them here!
+          </h3>
           <button class="btn-default btn-primary">
             <Link to="/">Watch Now</Link>
           </button>

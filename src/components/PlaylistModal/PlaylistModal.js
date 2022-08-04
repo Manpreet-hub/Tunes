@@ -36,7 +36,10 @@ export const PlaylistModal = ({ video, showModal, setShowModal }) => {
         <div className="pop-up-header">
           <h2> PlayLists</h2>
           <div>
-            <CancelIcon onClick={() => setShowModal(!showModal)} />
+            <CancelIcon
+              className="cross-icon"
+              onClick={() => setShowModal(!showModal)}
+            />
           </div>
         </div>
 

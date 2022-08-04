@@ -27,3 +27,7 @@
     top: 3.4rem;
 }
 
+.cross-icon :hover{
+    cursor: pointer;
+}
+

@@ -79,18 +79,15 @@ export const Login = () => {
             onChange={changeHandler}
           />
 
-          <button
-            className="btn-default  btn-primary login-signup-btn"
-            type="submit"
-          >
+          <button className="btn-default login-signup-btn" type="submit">
             Login
           </button>
           <button
-            className="btn-default  login-signup-btn"
+            className="btn-default  btn-primary login-signup-btn"
             type="submit"
             onClick={loginAsGuest}
           >
-            Login As Guest
+            Fill test credentials
           </button>
 
           <div className="create">
