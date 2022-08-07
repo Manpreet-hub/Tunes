@@ -1,6 +1,7 @@
 import "./singlevideo.css";
 import { useParams } from "react-router-dom";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import { VideoCard, PlaylistModal, Loader } from "../../components/";
 import { useState, useEffect } from "react";
@@ -56,6 +57,13 @@ export const SingleVideo = () => {
     }
   };
 
+  const relatedVideos = videos.filter(
+    (curVideo) =>
+      curVideo.category === video.category && curVideo._id !== video._id
+  );
+
+  window.scrollTo(0, 0);
+
   return (
     <div>
       {isLoading ? (
@@ -90,7 +98,7 @@ export const SingleVideo = () => {
                     <span
                       onClick={() => removeFromLike(dataDispatch, video._id)}
                     >
-                      <ThumbUpOutlinedIcon className="icon" />
+                      <ThumbUpIcon className="icon" />
                       LIKED
                     </span>
                   )}
@@ -119,7 +127,7 @@ export const SingleVideo = () => {
           </div>
 
           <div className="side-videos">
-            {videos.map((video) => (
+            {relatedVideos.map((video) => (
               <VideoCard key={video._id} videoInfo={video} />
             ))}
           </div>

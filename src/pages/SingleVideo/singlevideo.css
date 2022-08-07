@@ -44,6 +44,7 @@
     width: 20%;
     gap: 2rem;
     margin-right: 4rem;
+
 }
 
 @media (max-width:1080px) {
@@ -65,3 +66,13 @@
     }
     
 }
+
+@media screen and (max-width: 1250px) {
+    .single-video-container {
+      flex-direction: column;
+    }
+  
+    .video-section {
+      align-self: stretch;
+    }
+  }

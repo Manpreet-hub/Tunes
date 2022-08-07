@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../../context/";
 import { signUpService } from "../../services/";
+import { toast } from "react-toastify";
 
 export const Signup = () => {
   const [userData, setUserData] = useState({
@@ -24,7 +25,6 @@ export const Signup = () => {
     try {
       const { data } = await signUpService(userData);
       const { encodedToken, foundUser } = data;
-      console.log(data);
       authDispatch({
         type: "INIT_AUTH",
         payload: data.foundUser,
@@ -32,10 +32,27 @@ export const Signup = () => {
       });
       navigate("/");
       localStorage.setItem("token", encodedToken);
+      toast.success("Signup Successfully", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     } catch (error) {
       authDispatch({ type: "AUTH_FAILURE", payload: "Something went wrong!!" });
-      console.log("error" + error);
+      toast.error("Username already exists", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     }
+  };
+
+  const dummyData = (e) => {
+    e.preventDefault();
+    setUserData({
+      firstName: "Manpreet",
+      lastName: "Singh",
+      email: "manpreet@gmail.com",
+      password: "manpreet@123456",
+    });
   };
 
   return (
@@ -49,7 +66,8 @@ export const Signup = () => {
             className="user-input"
             type="text"
             name="firstName"
-            placeholder="Enter your first name"
+            value={userData.firstName}
+            placeholder="Manpreet"
             onChange={handleFormDataChange}
           />
           <label className="label">Last Name</label>
@@ -58,7 +76,8 @@ export const Signup = () => {
             className="user-input"
             type="text"
             name="lastName"
-            placeholder="Enter your last name"
+            value={userData.lastName}
+            placeholder="Singh"
             onChange={handleFormDataChange}
           />
           <label className="label">Email address</label>
@@ -67,7 +86,8 @@ export const Signup = () => {
             className="user-input"
             type="email"
             name="email"
-            placeholder="Enter your Email"
+            value={userData.email}
+            placeholder="manpreet@gmail.com"
             onChange={handleFormDataChange}
           />
           <label className="label">Password</label>
@@ -76,21 +96,26 @@ export const Signup = () => {
             className="user-input"
             type="password"
             name="password"
-            placeholder="Enter Password"
+            value={userData.password}
+            placeholder="manpreet@123456"
             onChange={handleFormDataChange}
           />
 
           <div>
             <input type="checkbox" required /> I accept all terms and conditions
           </div>
-          <button
-            className="btn-default  btn-primary login-signup-btn"
-            type="submit"
-          >
+          <button className="btn-default login-signup-btn" type="submit">
             Create new account
           </button>
+          <button
+            className="btn-default btn-primary login-signup-btn"
+            type="submit"
+            onClick={dummyData}
+          >
+            Fill dummy data
+          </button>
           <div className="create">
-            <Link to="/login">Already have an account</Link>
+            <Link to="/login">Already have an account 👉</Link>
           </div>
         </form>
       </div>

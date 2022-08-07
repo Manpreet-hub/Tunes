@@ -1,6 +1,7 @@
 .video-card{
     width: 20rem;
     cursor: pointer;
+    padding: 0.4rem .2rem;
 }
 
 .video-img{
