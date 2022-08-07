@@ -40,6 +40,31 @@ export const videos = [
     category: "Classical",
     uploaded: "Dec 22, 2015",
   },
+
+  {
+    _id: "kJQP7kiw5Fk",
+    title: "Luis Fonsi - Despacito ft. Daddy Yankee",
+    description:
+      "Let your heart sway to its own beautiful music. Express the feeling of love with the melodious track ‘Dekha Ek Khwab’ from ‘Silsila’.",
+    views: "977k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/kJQP7kiw5Fk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDMnrGS7UUfb2FyiKXj-RL4eGknVg",
+    category: "Hip-hop",
+    uploaded: "Jan 13, 2017",
+  },
+  {
+    _id: "PVxc5mIHVuQ",
+    title:
+      "Arijit Singh: Pachtaoge | Vicky Kaushal, Nora Fatehi |Jaani, B Praak",
+    description:
+      "Arijit Singh: Pachtaoge | Vicky Kaushal, Nora Fatehi |Jaani, B Praak, Arvindr Khaira | Bhushan Kumar ",
+    views: "779k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/PVxc5mIHVuQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCRQwdpGhdZ77rNW62vy-25_k_Hdw",
+    category: "Classical",
+    uploaded: "Aug 23, 2019",
+  },
+
   {
     _id: "xfA6ySYiuE4",
     title: "Kabira Naina | Mohd Irfan | Neha Kakka ",
@@ -118,6 +143,31 @@ export const videos = [
     category: "Hip-hop",
     uploaded: "Apr 1, 2017",
   },
+
+  {
+    _id: "uuCFRaFWjwY",
+    title: "Imran Khan - Amplifier (Official Music Video)",
+    description: "Imran Khan - Amplifier (Official Music Video)",
+    views: "803k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/uuCFRaFWjwY/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCGAtsV-FGUwm6Dz1p3zjPfZds8ag",
+    category: "Hip-hop",
+    uploaded: "Jul 13, 2009",
+  },
+
+  {
+    _id: "1lZvUYygJK0",
+    title:
+      "ELECTRO FOLK: Aaoge Jab | Neeti Mohan, Payal Dev & Aditya Dev | T-Series",
+    description:
+      "ELECTRO FOLK: Aaoge Jab | Neeti Mohan, Payal Dev & Aditya Dev | T-Series",
+    views: "399k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/1lZvUYygJK0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBq-PdKp8uzN_EOoeFMPfrw-phlHg",
+    category: "Folk",
+    uploaded: "Jul 21, 2019",
+  },
+
   {
     _id: "FsC9gGQ37-4",
     title: "ELECTRO FOLK: BHUMBRO | Shirley Setia, Parry G & Aditya Dev ",
@@ -185,6 +235,19 @@ export const videos = [
     category: "Cover",
     uploaded: "Apr 30, 2022",
   },
+
+  {
+    _id: "8uzXFv9f_qc",
+    title:
+      "Taal Se Taal Mila (Vidya Vox Remix Cover) (ft. Shankar Tucker & Jomy George) ",
+    description:
+      "Taal Se Taal Mila (Vidya Vox Remix Cover) (ft. Shankar Tucker & Jomy George) ",
+    views: "499k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/8uzXFv9f_qc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBDX19Pkp0rZ8he3S6Wjgq13SBfxA",
+    category: "Cover",
+    uploaded: "Feb 13, 2016",
+  },
   {
     _id: "JuduiEAkwZc",
     title: "Tere bina | Cover by Noor Chahal & Kushagra Thakur",
@@ -205,6 +268,29 @@ export const videos = [
     category: "Cover",
     uploaded: "Sep 8, 2020",
   },
+
+  {
+    _id: "mYSOyDXJ6uM",
+    title: "Kajra Mohobbat Wala | (Reprised Version) | Sachet Tandon ",
+    description: "Kajra Mohobbat Wala | (Reprised Version) | Sachet Tandon ",
+    views: "999k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/mYSOyDXJ6uM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALW1DsEK41YaC8OrEF1KIY7a1Spg",
+    category: "Cover",
+    uploaded: "Dec 7, 2015",
+  },
+
+  {
+    _id: "yBz8gwLsOHQ",
+    title: "Kabira by English and Hindi full song (cover) by vidya vox ",
+    description: "Kabira by English and Hindi full song (cover) by vidya vox",
+    views: "599k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/yBz8gwLsOHQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDa1dv9AMrR1yNYUKdJnfSR7xEw8Q",
+    category: "Cover",
+    uploaded: "Mar 16, 2017",
+  },
+
   {
     _id: "h8L2JfZuIxE",
     title: "Tich Button | Punjabi Cover Song - Simar Sethi",
@@ -251,6 +337,19 @@ export const videos = [
     category: "Live",
     uploaded: "Aug 22, 2021",
   },
+
+  {
+    _id: "5DiLiDaIemI",
+    title: "ATIF ASLAM - NEHA KAKKAR LIVE IN HOUSTON (2018) Dil Diyan Gallan",
+    description:
+      "ATIF ASLAM - NEHA KAKKAR LIVE IN HOUSTON (2018) Dil Diyan Gallan",
+    views: "460k views",
+    thumbnail:
+      "https://i.ytimg.com/vi/5DiLiDaIemI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC9AOufhMsQBlcTn2qYufbRfeEjlg",
+    category: "Live",
+    uploaded: "May 23, 2018",
+  },
+
   {
     _id: "x5qZeLdkF4w",
     title: "Churaake Dil Mera by Kumar Sanu and Anuradha Gosh",
