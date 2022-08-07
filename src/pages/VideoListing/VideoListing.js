@@ -15,36 +15,38 @@ export const VideoListing = () => {
   const finalFiltered = getSearchResult(sortedVideosByCategory, search);
   return (
     <>
-      <div className="video-categories-container">
-        <span
-          className={showAllVideo ? "category category-active" : "category"}
-          onClick={() => {
-            setShowAllVideo(!showAllVideo);
-            dataDispatch({ type: "SET_CATEGORY", payload: "All" });
-          }}
-        >
-          All
-        </span>
-
-        {categoriesData.map((catItem) => (
+      {finalFiltered.length !== 0 && (
+        <div className="video-categories-container">
           <span
-            className={
-              category === catItem.categoryName
-                ? "category category-active"
-                : "category"
-            }
+            className={showAllVideo ? "category category-active" : "category"}
             onClick={() => {
-              setShowAllVideo(false);
-              dataDispatch({
-                type: "SET_CATEGORY",
-                payload: catItem.categoryName,
-              });
+              setShowAllVideo(!showAllVideo);
+              dataDispatch({ type: "SET_CATEGORY", payload: "All" });
             }}
           >
-            {catItem.categoryName}
+            All
           </span>
-        ))}
-      </div>
+
+          {categoriesData.map((catItem) => (
+            <span
+              className={
+                category === catItem.categoryName
+                  ? "category category-active"
+                  : "category"
+              }
+              onClick={() => {
+                setShowAllVideo(false);
+                dataDispatch({
+                  type: "SET_CATEGORY",
+                  payload: catItem.categoryName,
+                });
+              }}
+            >
+              {catItem.categoryName}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div className="video-listing">
         {finalFiltered.map((videoInfo) => (
