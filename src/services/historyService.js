@@ -12,9 +12,7 @@ const getHistory = async (dataDispatch) => {
       },
     });
     dataDispatch({ type: "SET_HISTORY", payload: history });
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 const postHistory = async (dataDispatch, video) => {
@@ -33,9 +31,7 @@ const postHistory = async (dataDispatch, video) => {
       }
     );
     dataDispatch({ type: "SET_HISTORY", payload: history });
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 const deleteHistory = async (dataDispatch, videoId) => {
@@ -49,9 +45,7 @@ const deleteHistory = async (dataDispatch, videoId) => {
     });
 
     dataDispatch({ type: "SET_HISTORY", payload: history });
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 const clearAllHistory = async (dataDispatch) => {
@@ -64,9 +58,7 @@ const clearAllHistory = async (dataDispatch) => {
       headers: { authorization: token },
     });
     dataDispatch({ type: "SET_HISTORY", payload: history });
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };
 
 export { getHistory, postHistory, deleteHistory, clearAllHistory };
